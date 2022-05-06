@@ -11,13 +11,13 @@ Clock::Clock(const std::string& str) {
     }
 };
 
-std::string Clock::clockToString() {
-    return this->cl;
-}
-
 bool Clock::operator==(Clock rhs) {
     if (rhs.clockToString() == "")
         return false;
     else
         return rhs.cl == this->cl;
+}
+
+std::string Clock::clockToString() {
+    return this->cl;
 }

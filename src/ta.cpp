@@ -1,21 +1,5 @@
 #include "../headers/ta.h"
 
-void TA::setClocks(std::vector<std::string>& clocks) {
-    for (auto& clock : clocks) {
-        this->clocks.push_back(clock);
-    }
-}
-
-void TA::setStates(std::vector<std::string>& states) {
-    for (auto& state : states) {
-        if (std::find(this->states.begin(), this->states.end(), state) == this->states.end()) {
-            this->states.push_back(state);
-        } else {
-            throw std::runtime_error("State is already added");
-        }
-    }
-}
-
 void TA::addConstraint(std::string& cons, std::string& state) {
     if (std::find(this->states.begin(), this->states.end(), state) != this->states.end()) {
         State tmpState;
@@ -42,6 +26,22 @@ void TA::addConstraint(std::string& cons, std::string& state) {
         }
     } else {
         throw std::runtime_error("State was not added");
+    }
+}
+
+void TA::setClocks(std::vector<std::string>& clocks) {
+    for (auto& clock : clocks) {
+        this->clocks.push_back(clock);
+    }
+}
+
+void TA::setStates(std::vector<std::string>& states) {
+    for (auto& state : states) {
+        if (std::find(this->states.begin(), this->states.end(), state) == this->states.end()) {
+            this->states.push_back(state);
+        } else {
+            throw std::runtime_error("State is already added");
+        }
     }
 }
 
