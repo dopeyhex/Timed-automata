@@ -22,7 +22,7 @@ set(SOURCE
     ../src/main.cpp
     ../src/clock.cpp
     ../src/cc.cpp
-    ../src/state.cpp
+    ../src/loc.cpp
     ../src/ta.cpp
     ../src/graph.cpp
 )

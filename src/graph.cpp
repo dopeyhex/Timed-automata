@@ -1,40 +1,33 @@
 #include "../headers/graph.h"
 
-auto comparator = [](const State& state1, const State& state2) -> bool {
+auto comparator = [](const Loc& state1, const Loc& state2) -> bool {
     return true;
 };
-
-void Graph::addEdge(const State& now, const State& next,
-        const std::vector<ClockConstraint>& guard,
-        const std::vector<Clock>& resets,
-        const std::string& action) {
-        this->edges.emplace_back(now, next, guard, resets, action);
-}
 
 // construct a graph from ta
 // give each state a number
 Graph::Graph(TA& ta) {
-    ta.getStates();
-    ta.getClocks();
+    std::vector<Loc> locs = ta.getLocs();
+    
 };
 
 /*
-bool Graph::isReachable(State& src, State& dest) {
+bool Graph::isReachable(Loc& src, Loc& dest) {
     std::vector<bool> discovered(this->adj.size());
-    std::queue<State> q;
-    discovered[this->statenums[src]] = true;
+    std::queue<Loc> q;
+    discovered[this->loceval[src]] = true;
     q.push(src);
     while (!q.empty()) {
-        State v = q.front();
+        Loc v = q.front();
         q.pop();
         if (v == dest) {
             return true;
         }
-        for (State u: this->adj[this->statenums[v]])
+        for (Loc u: this->adj[this->loceval[v]])
         {
-            if (!discovered[this->statenums[u]])
+            if (!discovered[this->loceval[u]])
             {
-                discovered[this->statenums[u]] = true;
+                discovered[this->loceval[u]] = true;
                 q.push(u);
             }
         }

@@ -21,3 +21,11 @@ bool Clock::operator==(Clock rhs) {
 std::string Clock::clockToString() {
     return this->cl;
 }
+
+size_t Clock::getClockValue() {
+    return this->value;
+}
+
+void Clock::setClockValue(size_t val) {
+    this->value = val;
+}

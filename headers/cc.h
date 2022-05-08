@@ -10,7 +10,8 @@ private:
     bool prevClosed = false;
 
 public:
-    ClockConstraint(const Clock& c, const std::string& s);
+    ClockConstraint(const Clock& c, const std::string& cons);
+    ClockConstraint(const std::string& cons);
     ~ClockConstraint() {};
 
     Clock& getClock();

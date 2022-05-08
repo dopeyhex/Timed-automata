@@ -6,15 +6,20 @@ cmake .
 make
 ./main
 ```
-## Project description
+## Timed automata description
 ``clock.h`` -- definition of clock
 
 ``cc.h`` -- definition of clock constraint
 
-``state.h`` -- definition of state (or location) with clock constraints
+``loc.h`` -- definition of location with clock constraints
 
 ``ta.h`` -- definition of timed automata
 
-Each class has a function to represent it as a string, clock and state have equality check.
+Each class has a function to represent it as a string for further optimizations.
+
+### TODO:
+Change representation from string to proper class in main 
+
+## Region graph description
 
 ``graph.h`` -- definition of the region graph with reachability check
