@@ -1,8 +1,6 @@
 #pragma once
 
-#include <regex>
-#include <stdexcept>
-#include <string>
+#include "utils.h"
 
 class Clock {
 private:
@@ -15,7 +13,6 @@ public:
 
     void setClockValue(size_t val);
     size_t getClockValue();
-
     bool operator==(Clock rhs);
 
     std::string clockToString();

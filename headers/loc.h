@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include "cc.h"
 
 class Loc {
@@ -19,7 +18,7 @@ public:
 
     bool operator==(Loc rhs);
 
-    void addInv(ClockConstraint& constraint);
+    void addCC(ClockConstraint& constraint);
 
     std::string locToString();
 };

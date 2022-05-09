@@ -6,9 +6,7 @@ class ClockConstraint {
 private:
     Clock clock;
     std::string op = "";
-    int clockVal;
-    bool prevClosed = false;
-
+    size_t maxClockVal;
 public:
     ClockConstraint(const Clock& c, const std::string& cons);
     ClockConstraint(const std::string& cons);
@@ -19,6 +17,8 @@ public:
     int getClockVal();
 
     bool isPrevClosed();
+
+    friend bool operator> (ClockConstraint& rhs, ClockConstraint& lhs);
 
     std::string ccToString();
 };

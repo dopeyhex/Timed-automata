@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(bruh LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (APPLE)
@@ -25,6 +25,7 @@ set(SOURCE
     ../src/loc.cpp
     ../src/ta.cpp
     ../src/graph.cpp
+    ../src/step.cpp
 )
 
 add_executable(main ${SOURCE})

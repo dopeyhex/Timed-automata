@@ -1,16 +1,11 @@
 #pragma once
 
 #include "ta.h"
-#include <queue>
-#include <map>
 
 class Graph {
 private:
-    std::vector<Edge> edges;
-    std::vector<std::vector<Loc> > adj;
-    std::map<Loc, size_t> loceval;
-public:
 
+public:
     Graph() {};
     // construct a graph from ta
     // give each state a number
@@ -19,3 +14,6 @@ public:
 
     bool isReachable(Loc& src, Loc& dest);
 };
+
+
+//for each location for each clock minimum and maximum values

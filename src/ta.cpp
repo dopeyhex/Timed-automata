@@ -10,7 +10,7 @@ void TA::addInv(std::string& cons, std::string& loc) {
                 Clock tmpClock(static_cast<std::string>(sm[1]));
                 if (std::find(this->clocks.begin(), this->clocks.end(), tmpClock) != this->clocks.end()) {
                     ClockConstraint tmpCons(tmpClock, static_cast<std::string>(sm[2]));
-                    l.addInv(tmpCons);
+                    l.addCC(tmpCons);
                 } else {
                     throw std::runtime_error("Clock was not added");
                 }
@@ -22,17 +22,11 @@ void TA::addInv(std::string& cons, std::string& loc) {
     }
 }
 
-void TA::addEdge(const Loc& now, const Loc& next,
+void TA::addTransition(const Loc& now, const Loc& next,
         const std::vector<ClockConstraint>& guards,
-        const std::vector<Clock>& resets,
+        const std::vector<Clock>& reset,
         const std::string& action) {
-        this->edges.emplace_back(now, next, guards, resets, action);
-    for (auto& clock : resets) {
-        for (auto& cl : this->clocks) {
-            if (cl == clock)
-                cl.setClockValue(0);
-        }
-    }
+        this->transitions.emplace_back(now, next, guards, reset, action);
 }
 
 void TA::setClocks(std::vector<std::string>& clocks) {
@@ -70,12 +64,16 @@ std::vector<Loc> TA::getLocs() {
 }
 
 std::string TA::taToString() {
-    std::string res = "clocks: ";
+    std::string res = "Clocks: ";
     for (auto& clock : this->clocks)
         res += clock.clockToString() + "; ";
-    res += "\nlocs:\n";
+    res += "\n\nLocations:\n";
     for (auto& loc : this->locs) {
         res += loc.locToString() + ";\n";
+    }
+    res += "\nTransitions:\n";
+    for (auto& step : this->transitions) {
+        res += step.stepToString() + ";\n\n";
     }
     return res;
 }

@@ -1,15 +1,16 @@
 #include "../headers/cc.h"
 
+#include <iostream>
+
 ClockConstraint::ClockConstraint(const Clock& c, const std::string& cons) {
     //input check
     std::regex pattern("^([<>]?=?)\\s*(\\d+)$");
     std::smatch sm;
     if (std::regex_search(cons, sm, pattern)) {
         this->op = static_cast<std::string>(sm[1]);
-        this->clockVal = std::stoi(static_cast<std::string>(sm[2]));
+        this->maxClockVal = std::stoi(static_cast<std::string>(sm[2]));
         this->clock = c;
-        if (this->op == "<" || this->op == "<=")
-            this->prevClosed = true;
+        size_t val = this->clock.getClockValue();
     } else {
         throw std::runtime_error("Added constraint is not in the right format");
     }
@@ -35,13 +36,19 @@ std::string& ClockConstraint::getOp() {
 }
 
 int ClockConstraint::getClockVal() {
-    return this->clockVal;
-}
-
-bool ClockConstraint::isPrevClosed() {
-    return this->prevClosed;
+    return this->maxClockVal;
 }
 
 std::string ClockConstraint::ccToString() {
-    return this->clock.clockToString() + this->op + std::to_string(this->clockVal);
+    return this->clock.clockToString() + this->op + std::to_string(this->maxClockVal);
+}
+
+bool operator> (ClockConstraint& rhs, ClockConstraint& lhs) {
+    if ((rhs.getClock() == lhs.getClock()) &&
+        (rhs.getOp() == lhs.getOp()) && 
+        (rhs.getClockVal() > lhs.getClockVal())) {
+            return true;
+    } else {
+        return false;
+    }
 }

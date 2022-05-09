@@ -1,12 +1,13 @@
 #pragma once
 
-#include "edge.h"
+#include "step.h"
 
 class TA {
 private:
     std::vector<Clock> clocks;
     std::vector<Loc> locs;
-    std::vector<Edge> edges;
+    std::vector<Step> transitions;
+    // min and max values for each clock to get to the next transition
 public:
     TA() {};
     ~TA() {};
@@ -16,9 +17,9 @@ public:
     void setLocs(std::vector<Loc>& locs);
 
     void addInv(std::string& cons, std::string& loc);
-    void addEdge(const Loc& now, const Loc& next,
+    void addTransition(const Loc& now, const Loc& next,
          const std::vector<ClockConstraint>& guards,
-         const std::vector<Clock>& resets,
+         const std::vector<Clock>& reset,
          const std::string& action);
 
     std::vector<Clock> getClocks();
