@@ -1,0 +1,21 @@
+<svg width="588" height="539" viewBox="0 0 588 539" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="layer1">
+        <path id="path10" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 70.185028 24.527222 C 70.185028 48.346802 70.185028 72.15625 70.661263 133.5849 C 71.137497 195.013489 72.08989 294.061157 72.566025 356.918274 C 73.042175 419.77533 73.042175 446.442017 73.042175 473.098694"/>
+        <path id="path32" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 73.042175 473.098694 C 73.042175 473.098694 520.267212 470.084351 520.267212 470.084351"/>
+        <path id="path36" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 165.210846 23.395996 C 165.210846 47.215454 165.210846 71.025024 165.687073 132.453613 C 166.163315 193.882263 167.115692 292.929871 167.591843 355.786987 C 168.067978 418.644043 168.067978 445.31073 168.067978 471.967346"/>
+        <path id="path40" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 257.974121 23.395996 C 257.974121 47.215454 257.974121 71.025024 258.450378 132.453613 C 258.926636 193.882263 259.878998 292.929871 260.355133 355.786987 C 260.831268 418.644104 260.831268 445.31073 260.831268 471.967407"/>
+        <path id="path44" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 352.999969 24.527222 C 352.999969 48.346802 352.999969 72.15625 353.476166 133.5849 C 353.952454 195.013489 354.904816 294.061157 355.380951 356.918274 C 355.857086 419.77533 355.857086 446.442017 355.857086 473.098694"/>
+        <path id="path48" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 71.910912 391.647949 C 71.910912 391.647949 519.135925 388.633667 519.135925 388.633667"/>
+        <path id="path52" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 70.779655 295.490845 C 70.779655 295.490845 518.004639 292.476563 518.004639 292.476563"/>
+        <path id="path56" fill="none" stroke="#000000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 71.910904 210.646423 C 71.910904 210.646423 519.135986 207.63208 519.135986 207.63208"/>
+        <text id="C" xml:space="preserve" x="13" y="40" font-family="Helvetica" font-size="39.999874" fill="#000000">C</text>
+        <text id="y" xml:space="preserve" x="42" y="50" font-family="Helvetica" font-size="29.333329" fill="#000000">y</text>
+        <text id="text1" xml:space="preserve" x="519" y="506" font-family="Helvetica" font-size="39.999874" fill="#000000">C</text>
+        <text id="x" xml:space="preserve" x="549" y="515" font-family="Helvetica" font-size="29.333329" fill="#000000">x</text>
+        <path id="path82" fill="#00ffff" stroke="#ff0000" stroke-width="0.999999" stroke-linecap="round" stroke-linejoin="round" d="M 73.042175 473.098694 C 73.042175 473.098694 166.652756 391.461487 166.652756 391.461487"/>
+        <path id="path86" fill="#0000ff" stroke="#0000ff" stroke-width="0.972888" stroke-linecap="round" stroke-linejoin="round" d="M 75.319252 472.706543 L 166.690506 393.542175 L 168.071869 471.609497 Z"/>
+        <text id="0" xml:space="preserve" x="41" y="495" font-family="Helvetica" font-size="39.999874" fill="#000000">0</text>
+        <text id="1" xml:space="preserve" x="37" y="400" font-family="Helvetica" font-size="39.999874" fill="#000000">1</text>
+        <text id="text2" xml:space="preserve" x="154" y="508" font-family="Helvetica" font-size="39.999874" fill="#000000">1</text>
+    </g>
+</svg>
