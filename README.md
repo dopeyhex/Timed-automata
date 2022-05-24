@@ -32,7 +32,7 @@ Firsty, for each state clocks' minimum and maximum values (depending on constrai
 
 is defined by 
 
-<img src="img/eq1.svg" alt="eq1" width="120"/>
+$$\begin{equation}0<x<1\\0<y<1\\x<y\end{equation}$$
 
 ``graph.h`` -- definition of the region graph with reachability check. Region graph consists of regions.
  
