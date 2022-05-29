@@ -1,4 +1,4 @@
-#include "../headers/clock.h"
+#include "../../headers/ta/clock.h"
 
 Clock::Clock(const std::string& str) {
     // input check
@@ -11,21 +11,21 @@ Clock::Clock(const std::string& str) {
     }
 };
 
-bool Clock::operator==(Clock rhs) {
+const bool Clock::operator==(Clock rhs) const{
     if (rhs.clockToString() == "")
         return false;
     else
         return rhs.cl == this->cl;
 }
 
-std::string Clock::clockToString() {
+const std::string Clock::clockToString() const {
     return this->cl;
 }
 
-size_t Clock::getClockValue() {
+const size_t Clock::getClockValue() const {
     return this->value;
 }
 
-void Clock::setClockValue(size_t val) {
-    this->value = val;
+void setClockValue(Clock& clock, size_t val) {
+    clock.value = val;
 }

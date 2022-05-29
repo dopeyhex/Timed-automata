@@ -1,15 +1,15 @@
 #pragma once
 
-#include "loc.h"
+#include "state.h"
 
 struct Step {
-    Loc now_, next_;
+    State now_, next_;
     std::vector<ClockConstraint> guards_;
     std::vector<Clock> reset_;
     std::string action_;
 
     Step() {};
-    Step(const Loc& now, const Loc& next,
+    Step(const State& now, const State& next,
          const std::vector<ClockConstraint>& guards,
          const std::vector<Clock>& reset,
          const std::string& action) :

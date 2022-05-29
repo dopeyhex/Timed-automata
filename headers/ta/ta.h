@@ -5,7 +5,7 @@
 class TA {
 private:
     std::vector<Clock> clocks;
-    std::vector<Loc> locs;
+    std::vector<State> states;
     std::vector<Step> transitions;
     // min and max values for each clock to get to the next transition
 public:
@@ -14,16 +14,17 @@ public:
 
     void setClocks(std::vector<std::string>& clocks);
     void setLocs(std::vector<std::string>& locs);
-    void setLocs(std::vector<Loc>& locs);
+    void setStates(std::vector<State>& states);
 
-    void addInv(std::string& cons, std::string& loc);
-    void addTransition(const Loc& now, const Loc& next,
+    void addInv(std::string& cons, std::string& state);
+    void addTransition(const State& now, const State& next,
          const std::vector<ClockConstraint>& guards,
          const std::vector<Clock>& reset,
          const std::string& action);
 
-    std::vector<Clock> getClocks();
-    std::vector<Loc> getLocs();
+    const std::vector<Clock> getClocks() const;
+    const std::vector<State> getLocs() const;
+    const std::vector<Step> getSteps() const;
 
     std::string taToString();
 };

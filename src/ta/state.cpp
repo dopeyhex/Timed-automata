@@ -1,21 +1,21 @@
-#include "../headers/loc.h"
+#include "../../headers/ta/state.h"
 
-std::string Loc::getLoc() {
+const std::string State::getLoc() const {
     return this->loc_;
 }
 
-std::vector<ClockConstraint> Loc::getCC() {
+const std::vector<ClockConstraint> State::getCC() const {
     return this->inv_;
 };
 
-bool Loc::operator==(Loc rhs) {
+const bool State::operator==(State rhs) const {
     if (rhs.getLoc() == "")
         return false;
     else 
         return this->loc_ != "" ? this->loc_ == rhs.loc_ : rhs.loc_ == "";
 }
 
-void Loc::addCC(ClockConstraint& constraint) {
+void State::addCC(ClockConstraint& constraint) {
     for (auto& cc : this->inv_) {
         if (cc > constraint) {
             cc = constraint;
@@ -23,7 +23,7 @@ void Loc::addCC(ClockConstraint& constraint) {
     }
 }
 
-std::string Loc::locToString() {
+std::string State::locToString() {
     if (this->inv_.size() == 0)
         return this->loc_;
     std::string tmp = "";

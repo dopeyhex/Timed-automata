@@ -8,17 +8,17 @@ private:
     std::string op = "";
     size_t maxClockVal;
 public:
-    ClockConstraint(const Clock& c, const std::string& cons);
+    ClockConstraint(Clock& c, const std::string& cons);
     ClockConstraint(const std::string& cons);
     ~ClockConstraint() {};
 
-    Clock& getClock();
-    std::string& getOp();
-    int getClockVal();
+    const Clock& getClock() const;
+    const std::string& getOp() const;
+    const int getClockVal() const;
 
     bool isPrevClosed();
 
-    friend bool operator> (ClockConstraint& rhs, ClockConstraint& lhs);
+    friend bool operator> (const ClockConstraint& rhs, const ClockConstraint& lhs);
 
     std::string ccToString();
 };

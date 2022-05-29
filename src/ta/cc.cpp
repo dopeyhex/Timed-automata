@@ -1,8 +1,8 @@
-#include "../headers/cc.h"
+#include "../../headers/ta/cc.h"
 
 #include <iostream>
 
-ClockConstraint::ClockConstraint(const Clock& c, const std::string& cons) {
+ClockConstraint::ClockConstraint(Clock& c, const std::string& cons) {
     //input check
     std::regex pattern("^([<>]?=?)\\s*(\\d+)$");
     std::smatch sm;
@@ -27,15 +27,15 @@ ClockConstraint::ClockConstraint(const std::string& cons) {
         }
 }
 
-Clock& ClockConstraint::getClock() {
+const Clock& ClockConstraint::getClock() const {
     return this->clock;
 }
 
-std::string& ClockConstraint::getOp() {
+const std::string& ClockConstraint::getOp() const {
     return this->op;
 }
 
-int ClockConstraint::getClockVal() {
+const int ClockConstraint::getClockVal() const {
     return this->maxClockVal;
 }
 
@@ -43,7 +43,7 @@ std::string ClockConstraint::ccToString() {
     return this->clock.clockToString() + this->op + std::to_string(this->maxClockVal);
 }
 
-bool operator> (ClockConstraint& rhs, ClockConstraint& lhs) {
+bool operator> (const ClockConstraint& rhs, const ClockConstraint& lhs) {
     if ((rhs.getClock() == lhs.getClock()) &&
         (rhs.getOp() == lhs.getOp()) && 
         (rhs.getClockVal() > lhs.getClockVal())) {
