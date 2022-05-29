@@ -28,7 +28,7 @@ A *clock region* is a part of the n-dimensional unit hypercube, where n is the n
 
 is defined by 
 
-$\begin{cases}0<x<1\\0<y<1\\x<y\end{cases}$
+<img src="img/eq1.svg" alt="eq1" width="120"/>
 
 
 
