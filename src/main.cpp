@@ -1,4 +1,4 @@
-#include "../headers/regions/graph.h"
+#include "../headers/zones/graph.h"
 
 #include <iostream>
 
@@ -45,15 +45,12 @@ int main() {
     std::string loccc = "loc1";
     ta.addInv(invvv, loccc);
     // Define automata's transitions
-    ta.addTransition(start, loc1, consedge1, std::vector<Clock>{}, "alpha");
+    ta.addTransition(start, loc1, consedge1, std::vector<Clock>{Clock("a")}, "alpha");
     ta.addTransition(loc1, loc2, consedge2, std::vector<Clock>{}, "alpha");
     ta.addTransition(loc2, finish, consedge3, std::vector<Clock>{}, "alpha");
-    ta.addTransition(finish, start, consedge4, std::vector<Clock>{}, "alpha");
+    ta.addTransition(finish, start, consedge4, std::vector<Clock>{Clock("a"), Clock("b")}, "alpha");
     std::cout << "Timed automata properties:\n" << ta.taToString() << std::endl;
     Graph graph(ta);
-    /*
-    State start("a");
-    State finish("d");
-    std::cout << (graph.isReachable(start, finish) ? "Yes" : "No");*/
+    std::cout << "Is state " << finish.locToString() << " reachable?\n" << (graph.isReachable(finish) ? "Yes" : "No") << std::endl;
     return 0;
 }

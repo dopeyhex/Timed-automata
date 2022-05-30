@@ -24,7 +24,8 @@ set(SOURCE
     ../src/ta/state.cpp
     ../src/ta/step.cpp
     ../src/ta/ta.cpp
-    ../src/regions/graph.cpp
+    ../src/zones/graph.cpp
+    ../src/zones/zone.cpp
     ../src/main.cpp
 )
 
