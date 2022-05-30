@@ -65,3 +65,4 @@ In my implementation switch is basically an offset of vector os Zones, because e
 
 ## TODO
 Code optimization and refactoring
+Concurrency
