@@ -1,6 +1,46 @@
 # A toy timed automata for FM-CPS course
 Note: this is an ineffective implementation which strictly follows the definitions.
 
+```
+Timed automata properties:
+Clocks:
+a; b; 
+
+States (Locations X Eval(C)):
+start: a<=5 && b<=3;
+loc1: a<=10 && b<=9;
+loc2: a<=15 && b<=17;
+finish: a<=20 && b<=25;
+
+Transitions:
+start->loc1:
+guards: b<=30;
+resets:
+a:=0;
+action: alpha;
+
+loc1->loc2:
+guards: a<=8 && b<=6;
+resets:
+action: alpha;
+
+loc2->finish:
+guards: a<=13;
+resets:
+action: alpha;
+
+finish->start:
+guards: a<=17 && b<=20;
+resets:
+a:=0;
+b:=0;
+action: alpha;
+
+
+Is state finish: a<=20 && b<=25 reachable?
+Yes
+```
+
 ## Build
 You will need g++-11 and CMake.
 
